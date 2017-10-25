@@ -11,13 +11,16 @@ in face of permanently reserved Traficar - traficar guys, please investigate opt
 
 Installation
 ------------
-```virtualenv -p python3 venv
+```
+virtualenv -p python3 venv
 source venv/bin/activate
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
 Usage
 -----
-```$ ./trafiblisko.py --help
+```
+$ ./trafiblisko.py --help
 Usage: trafiblisko.py [OPTIONS]
 
   Simple script that locks traficar nearest to you ;)
@@ -32,7 +35,8 @@ Options:
                                (default is 20 sec)
   --reservation-recheck FLOAT  How often check for reservation (default is
                                15min 03s)
-  --help                       Show this message and exit.```
+  --help                       Show this message and exit.
+```
 
 License
 -------

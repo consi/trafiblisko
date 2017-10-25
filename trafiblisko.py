@@ -115,7 +115,6 @@ class Traficar(object):
             self.selected_car["location"],
             self.selected_car["fuel"]
         ))
-        self.sess.options(urljoin(self.API_URL, "reservation/add"))
         #Let's book a car
         response = self._request(
             "reservation/add",

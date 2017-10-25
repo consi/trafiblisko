@@ -5,6 +5,7 @@
 # This is only a proof of concept
 # Do not use it, as it may lock your traficar account
 # I'm not responsible for damage done by this script
+# License: MIT License
 
 import requests
 import random
@@ -29,6 +30,7 @@ class Traficar(object):
         self.logger.debug("Logger installed")
         self.username = username
         self.password = password
+        # I'ts not possible that traficar will be further than length of equator
         self.selected_distance = 400751234.0
         self.selected_car = {}
         self.logindata = {}
@@ -89,7 +91,7 @@ class Traficar(object):
             "reservation/cancel",
             data = {
                 "reason": 5, 
-                "reasonDescription": "reason5"
+                "reasonDescription": "reason5" # This is a "stealth-mode" - default reason for timeout
             }
         )
         self.reserved = False
@@ -114,6 +116,7 @@ class Traficar(object):
             self.selected_car["fuel"]
         ))
         self.sess.options(urljoin(self.API_URL, "reservation/add"))
+        #Let's book a car
         response = self._request(
             "reservation/add",
             data = {

@@ -50,7 +50,7 @@ class Traficar(object):
     def _request(self, url, data=None, method="POST", params=None):
         url = urljoin(self.API_URL, url) #Join with api url
         self.logger.debug("Request to Traficar API {0}".format(url))
-        # Prepare request ass app/json
+        # Prepare request as Content Type application/json;charset=UTF-8
         req = requests.Request(
             method,
             url,
@@ -134,7 +134,6 @@ class Traficar(object):
         except json.decoder.JSONDecodeError:
             raise Exception("Response from cars api was invalid")
         #Now we want to search nearest car
-        #Set some wierd distance, eg equator length approx
         if len(cars)==0:
             raise Exception("API returned 0 available cars!")
         for car in cars:
